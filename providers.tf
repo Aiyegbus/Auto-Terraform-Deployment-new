@@ -3,7 +3,7 @@ terraform {
     organization = "Ayodev"
 
     workspaces {
-      name = ""
+      name = "Auto-Terraform-Deployment-new"
     }
   }
 }
