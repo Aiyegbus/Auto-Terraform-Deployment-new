@@ -8,7 +8,7 @@ resource "aws_security_group" "auto_sg" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.auto_vpc.var.vpc_cidr]
+    cidr_blocks = [var.vpc_cidr]
   }
 
   egress {
