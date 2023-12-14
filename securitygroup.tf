@@ -4,12 +4,11 @@ resource "aws_security_group" "auto_sg" {
   vpc_id      = aws_vpc.auto_vpc.id
 
   ingress {
-    description      = "TLS from VPC"
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.auto_vpc.vpc_cidr]
-    ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
+    description = "TLS from VPC"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = [aws_vpc.auto_vpc.var.vpc_cidr]
   }
 
   egress {
