@@ -7,6 +7,8 @@ resource "aws_instance" "my_ec2_instances" {
   subnet_id                   = aws_subnet.auto_subnet[count.index % length(aws_subnet.auto_subnet)].id
   associate_public_ip_address = true # Enables public IP addresses for EC2 instances
 
+  security_groups = [aws_security_group.auto_sg.id]
+
   user_data = file("user_data.sh")
 
   tags = {
